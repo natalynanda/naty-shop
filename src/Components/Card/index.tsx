@@ -15,7 +15,7 @@ const Card = ({data}: CardProps) => {
     }
 
     const renderIcon = (id: number) => {
-        const isInCart = context?.cardProducts?.filter((item) => item?.id === id).length > 0;
+        const isInCart = (context?.cardProducts?.filter((item) => item?.id === id)?.length ?? 0) > 0;
 
         if (isInCart) {
             return (<div className="absolute top-0 right-0 flex justify-center items-center bg-black w-6 h-6 rounded-full m-2 p-1 text-white"><CheckIcon /></div>)
